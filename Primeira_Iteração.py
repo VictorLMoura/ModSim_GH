@@ -16,3 +16,6 @@ def func1(Y, t):
 Y= odeint(func1, So, t)
 plt.plot(t, Y)
 plt.show()
+
+# Foi preciso outra iteração porque esta foge muito da realidade a partir do momento em que
+# não considera a absorção do GH injetado.
