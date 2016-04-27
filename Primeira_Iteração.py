@@ -7,11 +7,11 @@ from numpy import linspace
 # 5ng/ml por dia produzido por dia de GH.
 # V1 seria a velocidade de metabolização do GH pela enzima GHS-R.
 # dS é a taxa de variação da concentração de GH no sangue.
-V1 = 0.04 #Precisamos definir esse valor
-So = 40  #Concentração inicial em ng/ml
+V1 = 0.45 #Definimos esse parâmetro com base na informação de que demora 24 horas.
+So = [40]  #Concentração inicial em ng/ml
 t= np.linspace(0,24,200)
 def func1(Y, t):
-    dS= -V1*So
+    dS= -V1*Y[0]
     return dS
 Y= odeint(func1, So, t)
 plt.plot(t, Y)
